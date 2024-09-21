@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .player {
+            margin: 20px;
+        }
+        .status {
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Status Login</h1>
+    <div class="player">
+        <h2>Satria</h2>
+        <div id="status1" class="status">Offline</div>
+        <button id="btn1" onclick="toggleStatus(1)">Toggle Status</button>
+    </div>
+    <div class="player">
+        <h2>Abel</h2>
+        <div id="status2" class="status">Offline</div>
+        <button id="btn2" onclick="toggleStatus(2)">Toggle Status</button>
+    </div>
+
+    <script>
+        let status1 = false;
+        let status2 = false;
+
+        function toggleStatus(player) {
+            if (player === 1) {
+                status1 = !status1;
+                document.getElementById('status1').innerText = status1 ? 'Online' : 'Offline';
+            } else if (player === 2) {
+                status2 = !status2;
+                document.getElementById('status2').innerText = status2 ? 'Online' : 'Offline';
+            }
+        }
+    </script>
+</body>
+</html>
